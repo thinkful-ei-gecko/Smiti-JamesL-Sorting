@@ -93,7 +93,58 @@ function main() {
   ll.insertLast(37)
   ll.insertLast(22)
 
-  console.log(sortLinkedList(ll))
+  //console.log(sortLinkedList(ll))
 }
 
-main()
+//main()
+
+// 10, 10,  5, 1 , 19, 18
+
+// 1 lowest 
+// 19 highest 
+
+
+console.log(bucketSort([10,5,2,50,15,7,3,23,30], 2,50));
+
+
+function bucketSort(arr, low, high) {
+  const result = [];
+  for (let i = 0; i < high; i++) {
+    //console.log(result)
+    result[i] = '';
+  }
+  for (let i = 0; i < arr.length; i++) {
+    result[arr[i] - low] = arr[i];
+  }
+  return result;
+}
+
+
+
+const arr = [3,4,5,12,10,23,9]
+
+//console.log(bucketSort(arr))
+
+function shufflearray(arr){
+  for(let i=0; i<arr.length; i++){
+    let randomIndex = Math.floor(Math.random() * arr.length);
+    swap(arr, i, randomIndex);
+  }
+  return arr;
+}
+
+//console.log(shufflearray(arr));
+
+
+const books = ['Look', 'books', 'Cat', 'E', 'S'];
+// function toLowerCaseBooks(books){
+//  return books.forEach( book => book.toLowerCase())
+ 
+// }
+
+
+//console.log(books[0].toLowerCase());
+
+console.log(qSort(books));
+
+
